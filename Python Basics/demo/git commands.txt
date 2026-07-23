@@ -1,0 +1,45 @@
+#initialize local git repo 
+git init 
+
+
+#add file to the git. 
+git add file_name           # add single file 
+git add.                    # add multiple files
+
+
+#commit files to git
+git commit -m "message"
+
+#status check of this repo 
+#git check 
+
+#show previous comments
+#git log 
+
+#define user identity
+git config -- global user.name "your_username"
+got config -- global user.email your_email.
+
+#Branch
+#check branches
+git branch
+
+#create new branch
+git branch branch_name
+
+#rename branch name
+git name -M new_branch_name
+
+#switch branch
+git switch branch_name
+git checkout branch_name
+
+# todo:
+#add and commit the file to git 
+#wdit the file and add, commit to git
+
+
+#todo: 
+Python basics ko folder ma git implement garne, branch ra merge (optional)
+
+

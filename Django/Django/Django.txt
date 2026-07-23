@@ -1,0 +1,50 @@
+ls# Django:
+Python fraework, fullstack development(frontend, backend)
+- battery included framework
+- frontend: user interface
+- backend: data, database, logic
+
+- 2 project: fullstack project, backend: api creation
+- MVT architecture:
++ M : Model -> database, tables, data, datatype
++ V : View -> logic 
++ T : Templates -> frontend elements
+
+
+# install virtual environment
+- pip install virtualenv
+
+# create virtual environment
+- python -m venv env                # env is the name of virtual_env
+or, 
+- virtualenv env
+
+# activate virtual env
+- env\Scripts\activate     (win)    # env is the name of virtual_env
+- source env/bin/activate  (ios)
+
+# install Django
+- pip install Django
+
+project: configuration: setting
+app: functionalities: host, notification, payment
+
+# start project
+- django-admin startproject project_name .     # '.' is optional
+
+# without '.' file structure
+project:
+   - project
+   - manage.py
+
+# with '.' file structure
+- project
+
+# start server
+- python manage.py runserver
+
+# create app
+ python manage.py startapp app_name
+
+ 
+

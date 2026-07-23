@@ -1,0 +1,65 @@
+# GIT: source control, tracks file and folder, enable collaboration(branching,merge)
+# compare the previous state and current state of the folder
+# initialize local git repo
+git init
+
+# add file to the git
+git add file_name          [#add single file]
+git add .                  [# add multiple files]
+
+# commit file to git
+git commit -m "message"
+
+# status check of this repo
+git status
+
+# see previous commits
+git log
+
+# define user identity
+git config --global user.name "your_username"
+git config --global user.email your_email
+
+# Branch:
+#check branchs
+git Branch
+
+# create new branch
+git branch branch_name
+
+# rename branch name
+git branch -M "new_branch_name"
+
+# merge branch
+git merge branch_name
+
+# switch branch
+git switch branch_name
+git checkout branch_name
+
+# merge the files
+git merge branch_name
+
+# add remote repo to loacal(github lai link)
+git remote add origin github_repo_link
+
+# first push:      LOCAL REPO TO REMOTE REPO
+git push -u orgin master         
+git push
+
+# other branch
+git push origin branch_name
+
+# pull changes: REMOTE REPO TO LOCAL REPO
+git pull 
+git pull origin branch_name   
+
+# clone remote repo to local device
+git clone https://github.com/di-a7/demo_j.git
+
+# todo:
+# clone this github repo
+# create a branch of your name: switch to your branch
+# create a file of your name: program/ intro
+# abc.txt: status  {dia - > tasks completed}
+# add, commit , push, pull request, conflict resole(optional), merge
