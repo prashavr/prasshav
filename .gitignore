@@ -1,1 +1,15 @@
-Django/
+# Virtual environment
+Django/env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+
+# Local database
+Django/db.sqlite3
+
+# macOS
+.DS_Store
