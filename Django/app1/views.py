@@ -1,21 +1,5 @@
-# from django.shortcuts import render
-
-# Create your views here.
-# def index(request):
-#     context = {
-#         "title": "Student Records",
-#         "message": "This text came from the Django view.",
-#     }
-
-#     return render(request, "index.html", context)
-
-# HOME, ABOUT US, CONTACT US, SERVICES, etc.
-
-from multiprocessing import context
-
-from django.http import request
 from django.shortcuts import render
-
+from .models import TodoList
 
 def index(request):
     students = [
@@ -40,7 +24,9 @@ def index(request):
         "title": "Student Records",
         "students": students,
     }
+
     return render(request, "index.html", context)
+
 
 def about(request):
     context = {
@@ -49,3 +35,22 @@ def about(request):
     }
 
     return render(request, "about.html", context)
+
+def contact(request):
+    context = {
+        "title": "Contact Us",
+        "email": "hello@example.com",
+        "phone": "+977 9800000000",
+    }
+
+    return render(request, "contact.html", context)
+
+def todo_list(request):
+    todos = TodoList.objects.all().order_by("id")
+
+    context = {
+        "title": "Todo List",
+        "todos": todos,
+    }
+
+    return render(request, "todos.html", context)

@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index, name='index'),
     path("about/", views.about, name="about"),
+    path("contact/", views.contact, name="contact"),
+    path("todos/", views.todo_list, name="todos"),
 ]
 
 #browser url call -->  proejct.urls file ma check if the route exists or not

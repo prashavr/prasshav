@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">{{ title }}</h1>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>S.N.</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for todo in todos %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ todo.title }}</td>
+                        <td>{{ todo.description }}</td>
+
+                        <td>
+                            {% if todo.priority == "high" %}
+                                <span class="badge text-bg-danger">High</span>
+                            {% elif todo.priority == "low" %}
+                                <span class="badge text-bg-secondary">Low</span>
+                            {% else %}
+                                <span class="badge text-bg-info">Medium</span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if todo.status %}
+                                <span class="badge text-bg-success">
+                                    Completed
+                                </span>
+                            {% else %}
+                                <span class="badge text-bg-warning">
+                                    Pending
+                                </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            No tasks found.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
