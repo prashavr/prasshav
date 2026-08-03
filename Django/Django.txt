@@ -1,4 +1,4 @@
-ls# Django:
+# Django:
 Python fraework, fullstack development(frontend, backend)
 - battery included framework
 - frontend: user interface
@@ -7,7 +7,7 @@ Python fraework, fullstack development(frontend, backend)
 - 2 project: fullstack project, backend: api creation
 - MVT architecture:
 + M : Model -> database, tables, data, datatype
-+ V : View -> logic 
++ V : View -> logic
 + T : Templates -> frontend elements
 
 
@@ -16,12 +16,12 @@ Python fraework, fullstack development(frontend, backend)
 
 # create virtual environment
 - python -m venv env                # env is the name of virtual_env
-or, 
+or,
 - virtualenv env
 
 # activate virtual env
-- env\Scripts\activate     (win)    # env is the name of virtual_env
-- source env/bin/activate  (ios)
+- env\Scripts\activate (win)             # env is the name of virtual_env
+- source env/Scripts/activate  (ios)
 
 # install Django
 - pip install Django
@@ -39,12 +39,68 @@ project:
 
 # with '.' file structure
 - project
+- manage.py
 
 # start server
 - python manage.py runserver
 
 # create app
- python manage.py startapp app_name
+python manage.py startapp app_name
 
- 
 
+# Database table
+# Todolist
+- title        STRING
+- description  STRING
+- status       BOOLEAN
+- date         DATA
+
+# create migration file
+# - python manage.py makemigrations
+
+# create table
+# python manage.py migrate
+
+# create superuser
+python manage.py createsuperuser
+
+
+
+
+################ ORM #################
+# python shell
+# python manage.py shell
+
+# read all data from table GET
+# model_name.objects.all()
+# select * from model_name
+
+# add/create date CREATE
+# model_name.objects.create(title = "First", description="somthing", field3 ="....", field4 ="....")
+
+# RETERIVE: single data fetch
+model_name.objects.get(id = "..")
+a.name
+a.description
+a.status
+
+# UPDATE:
+a = model_name.objects.get(id = "..")
+a.field_name = "newdata...."
+a.save()
+
+# DELETE:
+a = model_name.objects.get(id = "..")
+a.delete()
+
+# Filter data
+Todolist.objects.filter(title="new", status=False, field="...", field="..",.....)
+Todolist.objects.filter(title="new", status=False, field="...", field="..",.....).values()
+
+
+# create requirement file
+pip freeze > requirements.txt
+
+# un/install from requirements
+pip install -r requiements.txt
+pip uninstall -r requiements.txt
